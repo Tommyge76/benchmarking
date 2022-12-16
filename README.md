@@ -8,7 +8,9 @@ This repository contains the benchmarking scripts used to benchmark ALEX and a B
 
 # Running the benchmarks
 Ensure you have downloaded the datasets from above.
- - To run the ALEX benchmark we need to clone the repository from https://github.com/microsoft/ALEX. We can then replace main.cpp with our benchmark in the benchmark folder in the ALEX repository. You can then follow the instructions on the ALEX repository to build and run the benchmark. Ensure you change the file path ```std::string keys_file_path = "resources/uniform_dense_200M_uint64";```
+ - To run the ALEX benchmark we need to clone the repository from https://github.com/microsoft/ALEX. We can then replace main.cpp with our benchmark in the benchmark folder in the ALEX repository. You can then follow the instructions on the ALEX repository to build and run the benchmark. Ensure you change the file path in the script ```std::string keys_file_path = "resources/uniform_dense_200M_uint64";``` You should also define the correct key type for the dataset ```#define KEY_TYPE uint64_t```.
+
+- To run the B-tree benchmark we need to abseil library for C++. We can download the library here https://github.com/abseil/abseil-cpp. Ensure you follow the same steps to change the data path and the key type for the correct dataset. We can then compile and run the benchmark by doing ```g++ -std=c++14 main.cpp -I {path to abseil library}```. Then do ```./a.out```. 
 
 # Citations
 - https://github.com/microsoft/ALEX
